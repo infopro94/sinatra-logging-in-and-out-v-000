@@ -1,4 +1,6 @@
 require_relative '../../config/environment'
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -24,6 +26,7 @@ class ApplicationController < Sinatra::Base
   get '/account' do
     @current_user = User.find_by_id(session[:user_id])
     if @current_user
+      binding.pry
       erb :account
     else
       erb :error
