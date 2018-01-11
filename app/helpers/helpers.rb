@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'pry'
 
-
 class Helpers
 
   def self.current_user(session)
